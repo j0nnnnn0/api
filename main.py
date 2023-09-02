@@ -13,6 +13,11 @@ todos = []
 async def get_todos():
     return {"todos" : todos}
 
+# add authentication
+from fastapi import Depends, FastAPI, HTTPException
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from pydantic import BaseModel
+
 
 # Get a single todo
 @app.get("/todos/{todo_id}")
